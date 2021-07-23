@@ -33,7 +33,8 @@ function App() {
                 }
             )
         } else {
-            return <Redirect to="/"/>
+          setIsLoaded(true)
+          return <Redirect to="/"/>
         }
     } else {
       setIsLoaded(true)
