@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { useHistory } from "react-router-dom"
 import { baseUrl } from "../baseurl"
+import logo from "../images/logo-large.png"
 
 const Login = () => {
     const [email, setEmail] = useState("")
@@ -35,11 +36,13 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className="login-dark">
+            <img src={logo} alt="quicknote" style={{ height: "200px"}}/>
             <form onSubmit={handleSubmit}>
-                <input placeholder="Email" required type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                <input placeholder="Password" required type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                <button type="submit">Log In</button>
+                <input placeholder="Email" required type="email" value={email} onChange={(e) => setEmail(e.target.value)}/><br/>
+                <input placeholder="Password" required type="password" value={password} onChange={(e) => setPassword(e.target.value)}/><br/>
+                <button type="submit" id="login">Log In</button>
+                <button id="signup">Sign Up</button>
             </form>
         </div>
     )

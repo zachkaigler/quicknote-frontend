@@ -1,0 +1,41 @@
+@mixin login-constants {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    img {
+        margin-top: -4rem;
+        margin-bottom: 2.5rem;
+    }
+
+    input {
+        text-align: center;
+        margin: .3rem;
+        border: 1px solid;
+        border-radius: 10px;
+        height: 1.5rem;
+        padding: .5rem;
+    }
+
+    button {
+        margin-top: .3rem;
+        text-align: center;
+        border: 1px solid;
+        border-color: #e6a7a7;
+        border-radius: 10px;
+        height: 2rem;
+        width: 95%;
+    }
+
+    #login {
+        margin-top: 1rem;
+    }
+
+    #signup {
+        border-color: #84bfd9;
+    }
+}

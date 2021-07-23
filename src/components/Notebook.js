@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Redirect } from "react-router-dom"
+import { Redirect, useHistory } from "react-router-dom"
 import { baseUrl } from "../baseurl"
 
 const Notebook = () => {
@@ -8,6 +8,7 @@ const Notebook = () => {
     const user = useSelector(state => state.userReducer.user)
     const notes = useSelector(state => state.userReducer.notes)
     const dispatch = useDispatch()
+    const history = useHistory()
 
     useEffect(() => {
         if (!user) {
@@ -38,6 +39,12 @@ const Notebook = () => {
         }
     }, [user, dispatch])
 
+    const handleClick = () => {
+        localStorage.clear()
+        dispatch({type: "SET_USER", payload: null})
+        history.push("/")
+    }
+
     if (isLoaded) {
         // Break into component later on
         const noteCards = notes.map((note) => {
@@ -55,6 +62,7 @@ const Notebook = () => {
                 <div>
                     {noteCards}
                 </div>
+                <button onClick={handleClick}>Log Out</button>
             </div>
         )
     } else {

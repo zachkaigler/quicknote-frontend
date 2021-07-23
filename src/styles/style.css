@@ -51,4 +51,136 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+.login-light {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+.login-light img {
+  margin-top: -4rem;
+  margin-bottom: 2.5rem;
+}
+
+.login-light input {
+  text-align: center;
+  margin: .3rem;
+  border: 1px solid;
+  border-radius: 10px;
+  height: 1.5rem;
+  padding: .5rem;
+}
+
+.login-light button {
+  margin-top: .3rem;
+  text-align: center;
+  border: 1px solid;
+  border-color: #e6a7a7;
+  border-radius: 10px;
+  height: 2rem;
+  width: 95%;
+}
+
+.login-light #login {
+  margin-top: 1rem;
+}
+
+.login-light #signup {
+  border-color: #84bfd9;
+}
+
+.login-light input {
+  border-color: #e6e6e6;
+}
+
+.login-light button {
+  color: gray;
+  background-color: white;
+}
+
+.login-light button:hover {
+  background-color: whitesmoke;
+}
+
+.login-dark {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: #303030;
+}
+
+.login-dark img {
+  margin-top: -4rem;
+  margin-bottom: 2.5rem;
+}
+
+.login-dark input {
+  text-align: center;
+  margin: .3rem;
+  border: 1px solid;
+  border-radius: 10px;
+  height: 1.5rem;
+  padding: .5rem;
+}
+
+.login-dark button {
+  margin-top: .3rem;
+  text-align: center;
+  border: 1px solid;
+  border-color: #e6a7a7;
+  border-radius: 10px;
+  height: 2rem;
+  width: 95%;
+}
+
+.login-dark #login {
+  margin-top: 1rem;
+}
+
+.login-dark #signup {
+  border-color: #84bfd9;
+}
+
+.login-dark input {
+  color: #cdcdcd;
+  border-color: #393939;
+  background-color: #282828;
+}
+
+.login-dark button {
+  color: gray;
+  background-color: #282828;
+}
+
+.login-dark button:hover {
+  background-color: #393939;
+}
 /*# sourceMappingURL=style.css.map */
