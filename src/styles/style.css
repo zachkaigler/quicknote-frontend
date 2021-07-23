@@ -87,6 +87,7 @@ table {
 }
 
 .login-light button {
+  color: gray;
   margin-top: .3rem;
   text-align: center;
   border: 1px solid;
@@ -109,7 +110,6 @@ table {
 }
 
 .login-light button {
-  color: gray;
   background-color: white;
 }
 
@@ -152,6 +152,7 @@ table {
 }
 
 .login-dark button {
+  color: gray;
   margin-top: .3rem;
   text-align: center;
   border: 1px solid;
@@ -176,7 +177,6 @@ table {
 }
 
 .login-dark button {
-  color: gray;
   background-color: #282828;
 }
 

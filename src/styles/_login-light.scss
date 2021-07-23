@@ -2,7 +2,7 @@
 
 .login-light {
     @include login-constants();
-    
+
     background-color: rgb(245, 245, 245);
 
     input {
@@ -10,7 +10,6 @@
     }
 
     button {
-        color: gray;
         background-color: white;
         &:hover {
             background-color: rgb(245, 245, 245);
