@@ -1,3 +1,9 @@
 @import './cleanup';
 @import './login-light';
-@import './login-dark'
+@import './login-dark';
+@import './signup_dark';
+@import './signup_light';
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}

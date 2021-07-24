@@ -7,6 +7,7 @@ import logo from "../images/logo-large.png"
 const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [error, setError] = useState(false)
     const dispatch = useDispatch()
     const history = useHistory()
 
@@ -25,7 +26,7 @@ const Login = () => {
         .then(resp => resp.json())
         .then((data) => {
             if (data.error) {
-                console.log(data.error)
+                setError(true)
             } else {
                 localStorage.qnToken = data.token
                 dispatch({type: "SET_USER", payload: data.result})
@@ -38,12 +39,13 @@ const Login = () => {
     return (
         <div className="login-dark">
             <img src={logo} alt="quicknote" style={{ height: "200px"}}/>
+            { error ? <p>Incorrect email or password.</p> : null }
             <form onSubmit={handleSubmit}>
                 <input placeholder="Email" required type="email" value={email} onChange={(e) => setEmail(e.target.value)}/><br/>
                 <input placeholder="Password" required type="password" value={password} onChange={(e) => setPassword(e.target.value)}/><br/>
                 <button type="submit" id="login">Log In</button>
-                <button id="signup">Sign Up</button>
             </form>
+            <button id="signup" onClick={() => history.push("/signup")}>Sign Up</button>
         </div>
     )
 }

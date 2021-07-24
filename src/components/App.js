@@ -1,10 +1,10 @@
-import "../styles/style.css"
 import { Switch, Route, Redirect } from "react-router-dom"
-import Login from "./Login"
-import Notebook from "./Notebook"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useState } from "react"
 import { baseUrl } from "../baseurl"
+import Login from "./Login"
+import Notebook from "./Notebook"
+import Signup from "./Signup"
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -48,6 +48,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           { user ? <Redirect to="/notes"/> : <Login /> }
+        </Route>
+        <Route exact path="/signup">
+          { user ? <Redirect to="/notes"/> : <Signup /> }
         </Route>
         <Route exact path="/notes">
           <Notebook />

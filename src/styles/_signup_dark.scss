@@ -1,0 +1,20 @@
+@import './signup-constants';
+
+.signup-dark {    
+    @include signup-constants;
+    background-color: rgb(48, 48, 48);
+
+    input {
+        color: rgb(205, 205, 205);
+        border-color: rgb(57, 57, 57);
+        background-color: rgb(40, 40, 40);
+    }
+
+    button {
+        border-color: rgb(57, 57, 57);
+        background-color: rgb(40, 40, 40);
+        &:hover {
+            background-color: rgb(57, 57, 57);
+        }
+    }
+}

@@ -1,4 +1,4 @@
-@mixin login-constants {
+@mixin signup-constants {
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -6,11 +6,6 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-
-    img {
-        margin-top: -4rem;
-        margin-bottom: 2.5rem;
-    }
 
     input {
         text-align: center;
@@ -26,22 +21,12 @@
         margin-top: .3rem;
         text-align: center;
         border: 1px solid;
-        border-color: #e6a7a7;
         border-radius: 10px;
         height: 2rem;
+        width: 6rem;
     }
 
     p {
         color: rgb(172, 103, 103);
-    }
-
-    #login {
-        width: 10.5rem;
-        margin-top: 1rem;
-    }
-
-    #signup {
-        width: 10.5rem;
-        border-color: #84bfd9;
     }
 }

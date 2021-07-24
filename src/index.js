@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { combineReducers, createStore } from 'redux';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
+import "./styles/style.css"
 
 let initUserState = {
   user: null,
