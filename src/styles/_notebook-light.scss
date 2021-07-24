@@ -1,0 +1,50 @@
+@import './notebook-constants';
+
+.notebook-light {    
+    @include notebook-constants;
+    color: rgb(48, 48, 48);
+    background-color: rgb(245, 245, 245);
+
+    .main-content {
+        background-color: rgb(233, 232, 232);
+
+        .white {
+            border-color: rgb(230, 230, 230);
+            background-color: rgb(245, 245, 245);
+        }
+
+        .red {
+            border-color: rgb(193, 134, 134);
+            background-color: rgb(215, 148, 148);
+        }
+
+        .green {
+            border-color: rgb(176, 215, 170);
+            background-color: rgb(188, 230, 182);
+        }
+
+        .blue {
+            border-color: rgb(147, 151, 215);
+            background-color: rgb(164, 169, 240);
+        }
+
+        .yellow {
+            border-color: rgb(208, 208, 168);
+            background-color: rgb(227, 227, 182);
+        }
+    }
+
+    input {
+        color: rgb(48, 48, 48);
+        border-color: rgb(230, 230, 230);
+        background-color: rgb(215, 215, 215);
+    }
+
+    button {
+        border-color: rgb(230, 230, 230);
+        background-color: white;
+        &:hover {
+            background-color: rgb(245, 245, 245);
+        }
+    }
+}

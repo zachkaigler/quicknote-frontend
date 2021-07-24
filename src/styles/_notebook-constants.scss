@@ -1,0 +1,114 @@
+@mixin notebook-constants {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+
+    .column-left {
+        position: sticky;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 100vh;
+        min-width: 20rem;
+
+        img {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            margin-bottom: 2rem;
+        }
+
+        #new-note {
+            border-color: #84bfd9;
+            margin-bottom: 2rem;
+            height: 2.5rem;
+            font-weight: bold;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            span {
+                font-size: 2rem;
+                margin-right: .5rem;
+            }
+        }
+    }
+
+    .main-content {
+        min-height: 100vh;
+        width: 100vw;
+        min-width: 40rem;
+
+        .pinned {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-left: 3.2rem;
+            padding-right: 3.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .unpinned {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-left: 3.2rem;
+            padding-right: 3.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .note-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .notecard {
+            text-align: left;
+            width: 15rem;
+            min-height: 18rem;
+            border: 1px solid;
+            border-radius: 10px;
+            padding: 15px;
+
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: .5rem;
+            }
+        }
+
+        h3 {
+            color: grey;
+            margin-bottom: 1.2rem
+        }
+    };
+
+    input {
+        margin: 2rem;
+        border: 1px solid;
+        border-radius: 10px;
+        height: 1.5rem;
+        width: 90%;
+        padding: .5rem;
+    }
+
+    button {
+        color: gray;
+        margin-top: .3rem;
+        text-align: center;
+        border: 1px solid;
+        border-radius: 10px;
+        height: 2rem;
+        width: 10rem;
+    }
+
+}

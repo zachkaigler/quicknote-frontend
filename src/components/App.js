@@ -53,7 +53,7 @@ function App() {
           { user ? <Redirect to="/notes"/> : <Signup /> }
         </Route>
         <Route exact path="/notes">
-          <Notebook />
+          { user ? <Notebook /> : <Redirect to="/"/> }
         </Route>
       </Switch>
     </div>

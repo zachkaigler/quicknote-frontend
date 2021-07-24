@@ -308,6 +308,434 @@ table {
   background-color: whitesmoke;
 }
 
+.notebook-dark {
+  min-height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  color: #cdcdcd;
+  background-color: #303030;
+}
+
+.notebook-dark .column-left {
+  position: -webkit-sticky;
+  position: sticky;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  min-width: 20rem;
+}
+
+.notebook-dark .column-left img {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.notebook-dark .column-left h1 {
+  margin-bottom: 2rem;
+}
+
+.notebook-dark .column-left #new-note {
+  border-color: #84bfd9;
+  margin-bottom: 2rem;
+  height: 2.5rem;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.notebook-dark .column-left #new-note span {
+  font-size: 2rem;
+  margin-right: .5rem;
+}
+
+.notebook-dark .main-content {
+  min-height: 100vh;
+  width: 100vw;
+  min-width: 40rem;
+}
+
+.notebook-dark .main-content .pinned {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
+  margin-bottom: 3rem;
+}
+
+.notebook-dark .main-content .unpinned {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
+  margin-bottom: 3rem;
+}
+
+.notebook-dark .main-content .note-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.notebook-dark .main-content .notecard {
+  text-align: left;
+  width: 15rem;
+  min-height: 18rem;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.notebook-dark .main-content .notecard h2 {
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+}
+
+.notebook-dark .main-content h3 {
+  color: grey;
+  margin-bottom: 1.2rem;
+}
+
+.notebook-dark input {
+  margin: 2rem;
+  border: 1px solid;
+  border-radius: 10px;
+  height: 1.5rem;
+  width: 90%;
+  padding: .5rem;
+}
+
+.notebook-dark button {
+  color: gray;
+  margin-top: .3rem;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 10px;
+  height: 2rem;
+  width: 10rem;
+}
+
+.notebook-dark .main-content {
+  background-color: #282828;
+}
+
+.notebook-dark .main-content .white {
+  border-color: #393939;
+  background-color: #303030;
+}
+
+.notebook-dark .main-content .red {
+  border-color: #4f1e1e;
+  background-color: #411818;
+}
+
+.notebook-dark .main-content .green {
+  border-color: #1e4f20;
+  background-color: #1d4118;
+}
+
+.notebook-dark .main-content .blue {
+  border-color: #1e244f;
+  background-color: #181b41;
+}
+
+.notebook-dark .main-content .yellow {
+  border-color: #4d4f1e;
+  background-color: #414118;
+}
+
+.notebook-dark input {
+  color: #cdcdcd;
+  border-color: #393939;
+  background-color: #282828;
+}
+
+.notebook-dark button {
+  border-color: #393939;
+  background-color: #282828;
+}
+
+.notebook-dark button:hover {
+  background-color: #393939;
+}
+
+.notebook-light {
+  min-height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  color: #303030;
+  background-color: whitesmoke;
+}
+
+.notebook-light .column-left {
+  position: -webkit-sticky;
+  position: sticky;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  min-width: 20rem;
+}
+
+.notebook-light .column-left img {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.notebook-light .column-left h1 {
+  margin-bottom: 2rem;
+}
+
+.notebook-light .column-left #new-note {
+  border-color: #84bfd9;
+  margin-bottom: 2rem;
+  height: 2.5rem;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.notebook-light .column-left #new-note span {
+  font-size: 2rem;
+  margin-right: .5rem;
+}
+
+.notebook-light .main-content {
+  min-height: 100vh;
+  width: 100vw;
+  min-width: 40rem;
+}
+
+.notebook-light .main-content .pinned {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
+  margin-bottom: 3rem;
+}
+
+.notebook-light .main-content .unpinned {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
+  margin-bottom: 3rem;
+}
+
+.notebook-light .main-content .note-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.notebook-light .main-content .notecard {
+  text-align: left;
+  width: 15rem;
+  min-height: 18rem;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.notebook-light .main-content .notecard h2 {
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+}
+
+.notebook-light .main-content h3 {
+  color: grey;
+  margin-bottom: 1.2rem;
+}
+
+.notebook-light input {
+  margin: 2rem;
+  border: 1px solid;
+  border-radius: 10px;
+  height: 1.5rem;
+  width: 90%;
+  padding: .5rem;
+}
+
+.notebook-light button {
+  color: gray;
+  margin-top: .3rem;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 10px;
+  height: 2rem;
+  width: 10rem;
+}
+
+.notebook-light .main-content {
+  background-color: #e9e8e8;
+}
+
+.notebook-light .main-content .white {
+  border-color: #e6e6e6;
+  background-color: whitesmoke;
+}
+
+.notebook-light .main-content .red {
+  border-color: #c18686;
+  background-color: #d79494;
+}
+
+.notebook-light .main-content .green {
+  border-color: #b0d7aa;
+  background-color: #bce6b6;
+}
+
+.notebook-light .main-content .blue {
+  border-color: #9397d7;
+  background-color: #a4a9f0;
+}
+
+.notebook-light .main-content .yellow {
+  border-color: #d0d0a8;
+  background-color: #e3e3b6;
+}
+
+.notebook-light input {
+  color: #303030;
+  border-color: #e6e6e6;
+  background-color: #d7d7d7;
+}
+
+.notebook-light button {
+  border-color: #e6e6e6;
+  background-color: white;
+}
+
+.notebook-light button:hover {
+  background-color: whitesmoke;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .8rem;
+}
+
 p {
   font-family: Arial, Helvetica, sans-serif;
 }
