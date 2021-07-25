@@ -5,6 +5,7 @@ import { baseUrl } from "../baseurl"
 import Login from "./Login"
 import Notebook from "./Notebook"
 import Signup from "./Signup"
+import Loading from "./Loading"
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -14,7 +15,6 @@ function App() {
   useEffect(() => {
     if (!user) {
         if (localStorage.qnToken) {
-            console.log(localStorage.qnUserId)
             fetch(`${baseUrl}/users/authenticate`, {
                 method: "GET",
                 headers: {
@@ -47,7 +47,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/">
-          { user ? <Redirect to="/notes"/> : <Login /> }
+          { user ? <Redirect to="/notes"/> : localStorage.qnToken ? <Loading /> : <Login /> }
         </Route>
         <Route exact path="/signup">
           { user ? <Redirect to="/notes"/> : <Signup /> }

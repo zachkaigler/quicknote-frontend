@@ -865,4 +865,16 @@ h3 {
 p {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.loading-dark {
+  width: 100vw;
+  height: 100vh;
+  background-color: #303030;
+}
+
+.loading-light {
+  width: 100vw;
+  height: 100vh;
+  background-color: whitesmoke;
+}
 /*# sourceMappingURL=style.css.map */
