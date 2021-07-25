@@ -34,9 +34,7 @@ const AccountSettings = ({ setAcctSettingsVis }) => {
             } else {
                 localStorage.qnTheme = theme
                 dispatch({type: "SET_USER", payload: data.user})
-                if (user === data) {
-                    setAcctSettingsVis(false)
-                }
+                setAcctSettingsVis(false)
             }
         })
     }
