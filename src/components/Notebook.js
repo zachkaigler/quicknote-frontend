@@ -57,11 +57,15 @@ const Notebook = () => {
         return (
             <div className={`notebook-${user.theme}`}>
                 <div className="column-left">
-                    <img src={logo} alt="quicknote" style={{ height: "200px"}}/>
-                    <h1>Hello, {user.firstName}</h1>
-                    <button id="new-note"><span>+</span> New Note</button>
-                    <button onClick={() => setAcctSettingsVis(true)}>Account Settings</button>
-                    <button onClick={handleClick}>Log Out</button>
+                    <div className="top">
+                        <img src={logo} alt="quicknote" style={{ height: "200px"}}/>
+                        <h1>Hello, {user.firstName}</h1>
+                        <button id="new-note"><span>+</span> New Note</button>
+                    </div>
+                    <div className="bottom">
+                        <button onClick={() => setAcctSettingsVis(true)}>Account Settings</button>
+                        <button onClick={handleClick}>Log Out</button>
+                    </div>
                 </div>
                 <div className="main-content">
                     <div className="main-content-top">
@@ -85,11 +89,15 @@ const Notebook = () => {
         return (
             <div className={`notebook-${user.theme}`}>
                 <div className="column-left">
-                    <img src={logo} alt="quicknote" style={{ height: "200px"}}/>
-                    <h1>Hello, {user.firstName}</h1>
-                    <button id="new-note"><span>+</span> New Note</button>
-                    <button onClick={() => setAcctSettingsVis(true)}>Account Settings</button>
-                    <button onClick={handleClick}>Log Out</button>
+                    <div className="top">
+                        <img src={logo} alt="quicknote" style={{ height: "200px"}}/>
+                        <h1>Hello, {user.firstName}</h1>
+                        <button id="new-note"><span>+</span> New Note</button>
+                    </div>
+                    <div className="bottom">
+                        <button onClick={() => setAcctSettingsVis(true)}>Account Settings</button>
+                        <button onClick={handleClick}>Log Out</button>
+                    </div>
                 </div>
                 <div className="main-content">
                     <AccountSettings setAcctSettingsVis={setAcctSettingsVis}/>
