@@ -29,6 +29,7 @@ const Login = () => {
                 setError(true)
             } else {
                 localStorage.qnToken = data.token
+                localStorage.qnTheme = data.theme
                 dispatch({type: "SET_USER", payload: data.result})
                 dispatch({type: "SET_NOTES", payload: data.result.notes})
                 history.push("/notes")
@@ -37,7 +38,7 @@ const Login = () => {
     }
 
     return (
-        <div className="login-dark">
+        <div className={ localStorage.qnTheme ? `login-${localStorage.qnTheme}` : "login-light"}>
             <img src={logo} alt="quicknote" style={{ height: "200px"}}/>
             { error ? <p>Incorrect email or password.</p> : null }
             <form onSubmit={handleSubmit}>

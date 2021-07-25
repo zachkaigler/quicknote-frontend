@@ -86,6 +86,33 @@
             }
         }
 
+        .acct-settings {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h1 {
+                margin-top: 4rem;
+                margin-bottom: 2rem;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                input {
+                    margin: .75rem;
+                }
+
+                h2 {
+                    margin-bottom: .3rem;
+                }
+            }
+        }
+
         h3 {
             color: grey;
             margin-bottom: 1.2rem
@@ -111,4 +138,13 @@
         width: 10rem;
     }
 
+    select {
+        color: gray;
+        text-align: center;
+        border: 1px solid;
+        border-radius: 10px;
+        height: 2.6rem;
+        width: 100%;      
+        padding: .5rem;
+    }
 }

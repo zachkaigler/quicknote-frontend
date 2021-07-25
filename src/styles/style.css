@@ -446,6 +446,51 @@ table {
   margin-bottom: .5rem;
 }
 
+.notebook-dark .main-content .acct-settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.notebook-dark .main-content .acct-settings h1 {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.notebook-dark .main-content .acct-settings form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.notebook-dark .main-content .acct-settings form input {
+  margin: .75rem;
+}
+
+.notebook-dark .main-content .acct-settings form h2 {
+  margin-bottom: .3rem;
+}
+
 .notebook-dark .main-content h3 {
   color: grey;
   margin-bottom: 1.2rem;
@@ -468,6 +513,16 @@ table {
   border-radius: 10px;
   height: 2rem;
   width: 10rem;
+}
+
+.notebook-dark select {
+  color: gray;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 10px;
+  height: 2.6rem;
+  width: 100%;
+  padding: .5rem;
 }
 
 .notebook-dark .main-content {
@@ -512,6 +567,12 @@ table {
 
 .notebook-dark button:hover {
   background-color: #393939;
+}
+
+.notebook-dark select {
+  color: #cdcdcd;
+  border-color: #393939;
+  background-color: #282828;
 }
 
 .notebook-light {
@@ -652,6 +713,51 @@ table {
   margin-bottom: .5rem;
 }
 
+.notebook-light .main-content .acct-settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.notebook-light .main-content .acct-settings h1 {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.notebook-light .main-content .acct-settings form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.notebook-light .main-content .acct-settings form input {
+  margin: .75rem;
+}
+
+.notebook-light .main-content .acct-settings form h2 {
+  margin-bottom: .3rem;
+}
+
 .notebook-light .main-content h3 {
   color: grey;
   margin-bottom: 1.2rem;
@@ -674,6 +780,16 @@ table {
   border-radius: 10px;
   height: 2rem;
   width: 10rem;
+}
+
+.notebook-light select {
+  color: gray;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 10px;
+  height: 2.6rem;
+  width: 100%;
+  padding: .5rem;
 }
 
 .notebook-light .main-content {
@@ -718,6 +834,16 @@ table {
 
 .notebook-light button:hover {
   background-color: whitesmoke;
+}
+
+.notebook-light select {
+  color: #303030;
+  border-color: #e6e6e6;
+  background-color: #d7d7d7;
+}
+
+.App {
+  overflow-x: hidden;
 }
 
 h1 {
