@@ -8,6 +8,14 @@
 
 .App {
     overflow-x: hidden;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
 }
 
 h1 {
@@ -40,4 +48,8 @@ p {
     width: 100vw;
     height: 100vh;
     background-color: rgb(245, 245, 245);
+}
+
+#pinned {
+    font-weight: bold;
 }

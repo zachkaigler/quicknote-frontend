@@ -8,6 +8,7 @@ import Notecard from "./Notecard"
 
 const Notebook = () => {
     const [acctSettingsVis, setAcctSettingsVis] = useState(false)
+    const [query, setQuery] = useState("")
     const user = useSelector(state => state.userReducer.user)
     const notes = useSelector(state => state.userReducer.notes)
     const dispatch = useDispatch()
@@ -19,12 +20,14 @@ const Notebook = () => {
         history.push("/")
     }
 
-    let dispNotes
+    let allNotes
     if (!user.fnd) {
-        dispNotes = [firstNote, ...notes]
+        allNotes = [firstNote, ...notes]
     } else {
-        dispNotes = [...notes]
+        allNotes = [...notes]
     }
+
+    const dispNotes = allNotes.filter((note) => note.title.includes(query) || note.content.includes(query) || note.date.includes(query))
 
     const pinnedNotes = dispNotes.filter((note) => note.pinned)
     const pinnedNotecards = pinnedNotes.map((note) => {
@@ -62,10 +65,10 @@ const Notebook = () => {
                 </div>
                 <div className="main-content">
                     <div className="main-content-top">
-                        <input placeholder="Search notes..." />
+                        <input placeholder="Search notes..." value={query} onChange={(e) => setQuery(e.target.value)}/>
                     </div>
                     <div className="pinned">
-                        <h3>Pinned</h3>
+                        <h3 id="pinned">Pinned</h3>
                         <div className="note-container">
                             {pinnedNotecards}
                         </div>

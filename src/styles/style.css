@@ -846,6 +846,13 @@ table {
   overflow-x: hidden;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
 h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -876,5 +883,9 @@ p {
   width: 100vw;
   height: 100vh;
   background-color: whitesmoke;
+}
+
+#pinned {
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */
