@@ -323,9 +323,81 @@ table {
   background-color: #303030;
 }
 
+.notebook-dark .modal-bg {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.notebook-dark .modal {
+  width: 70vw;
+  height: 70vh;
+  -webkit-box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1000;
+  border-radius: 15px;
+  text-align: right;
+}
+
+.notebook-dark .modal form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.notebook-dark .modal form input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  border: none;
+}
+
+.notebook-dark .modal form textarea {
+  width: 100%;
+  border: none;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  resize: none;
+  font-size: 1rem;
+}
+
+.notebook-dark .modal .modal-delete {
+  margin-right: 4%;
+  cursor: pointer;
+}
+
 .notebook-dark .column-left {
   position: -webkit-sticky;
   position: sticky;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -339,7 +411,7 @@ table {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   min-width: 20rem;
 }
 
@@ -468,7 +540,7 @@ table {
 .notebook-dark .main-content .notecard {
   text-align: left;
   width: 15rem;
-  min-height: 18rem;
+  height: 18rem;
   border: 1px solid;
   border-radius: 10px;
   padding: 15px;
@@ -484,6 +556,7 @@ table {
           justify-content: space-between;
   margin-right: 1rem;
   margin-bottom: 1rem;
+  overflow: hidden;
 }
 
 .notebook-dark .main-content .notecard .notecard-title {
@@ -625,6 +698,15 @@ table {
   padding: .5rem;
 }
 
+.notebook-dark .modal {
+  background-color: #282828;
+}
+
+.notebook-dark .modal textarea {
+  color: #cdcdcd;
+  background-color: #282828;
+}
+
 .notebook-dark .main-content {
   background-color: #282828;
 }
@@ -690,9 +772,81 @@ table {
   background-color: whitesmoke;
 }
 
+.notebook-light .modal-bg {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.notebook-light .modal {
+  width: 70vw;
+  height: 70vh;
+  -webkit-box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1000;
+  border-radius: 15px;
+  text-align: right;
+}
+
+.notebook-light .modal form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.notebook-light .modal form input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  border: none;
+}
+
+.notebook-light .modal form textarea {
+  width: 100%;
+  border: none;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  resize: none;
+  font-size: 1rem;
+}
+
+.notebook-light .modal .modal-delete {
+  margin-right: 4%;
+  cursor: pointer;
+}
+
 .notebook-light .column-left {
   position: -webkit-sticky;
   position: sticky;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -706,7 +860,7 @@ table {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   min-width: 20rem;
 }
 
@@ -835,7 +989,7 @@ table {
 .notebook-light .main-content .notecard {
   text-align: left;
   width: 15rem;
-  min-height: 18rem;
+  height: 18rem;
   border: 1px solid;
   border-radius: 10px;
   padding: 15px;
@@ -851,6 +1005,7 @@ table {
           justify-content: space-between;
   margin-right: 1rem;
   margin-bottom: 1rem;
+  overflow: hidden;
 }
 
 .notebook-light .main-content .notecard .notecard-title {
@@ -992,6 +1147,19 @@ table {
   padding: .5rem;
 }
 
+.notebook-light .modal {
+  background-color: #e9e8e8;
+}
+
+.notebook-light .modal textarea {
+  color: #303030;
+  background-color: #e9e8e8;
+}
+
+.notebook-light .modal input {
+  background-color: #e9e8e8;
+}
+
 .notebook-light .main-content {
   background-color: #e9e8e8;
 }
@@ -1071,6 +1239,14 @@ h3 {
 
 p {
   font-family: Arial, Helvetica, sans-serif;
+  overflow: wrap;
+}
+
+pre {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: wrap;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .loading-dark {
@@ -1087,5 +1263,9 @@ p {
 
 #pinned {
   font-weight: bold;
+}
+
+.hidden {
+  opacity: 0;
 }
 /*# sourceMappingURL=style.css.map */

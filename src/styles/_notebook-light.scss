@@ -5,6 +5,19 @@
     color: rgb(48, 48, 48);
     background-color: rgb(245, 245, 245);
 
+    .modal {
+        background-color: rgb(233, 232, 232);
+
+        textarea {
+            color: rgb(48, 48, 48);
+            background-color: rgb(233, 232, 232);
+        }
+
+        input {
+            background-color: rgb(233, 232, 232);
+        }
+    }
+
     .main-content {
         background-color: rgb(233, 232, 232);
 

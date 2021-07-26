@@ -1,12 +1,16 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { AiFillDelete, AiFillPushpin, AiOutlinePushpin } from "react-icons/ai"
 import { baseUrl } from "../baseurl"
 
-const Notecard = ({ title, date, content, color, pinned, id }) => {
+const Notecard = ({ title, date, content, color, pinned, id, note, setActiveNote, setIsOpen }) => {
     const [taskBarVis, setTaskBarVis] = useState(false)
     const notes = useSelector(state => state.userReducer.notes)
     const dispatch = useDispatch()
+
+    const modalRef = useRef()
+    const contentRef = useRef()
+    const titleRef = useRef()
 
     // Add fetch requests for delete action
     const handleDelete = () => {
@@ -209,16 +213,23 @@ const Notecard = ({ title, date, content, color, pinned, id }) => {
         })
     }
 
+    const handleOpen = (e) => {
+        if (modalRef.current === e.target || contentRef.current === e.target || titleRef.current === e.target) {
+            setActiveNote(note)
+            setIsOpen(true)
+        }
+    }
+
     return (
-        <div className={`notecard ${color}`} onMouseOver={() => setTaskBarVis(true)} onMouseLeave={() => setTaskBarVis(false)}>
-            <div className="notecard-content">
-                <div className="notecard-title"><h2>{title}</h2> { pinned ? <AiFillPushpin className="icon" onClick={handleUnpin}/> : <AiOutlinePushpin className="icon" onClick={handlePin}/> } </div>
-                <h3>{date}</h3>
-                <p>{content}</p>
-            </div>
-            <div className="taskbar-container">
-                { taskBarVis ? 
-                    <div className="notecard-taskbar">
+        <>
+            <div className={`notecard ${color}`} ref={modalRef} onMouseOver={() => setTaskBarVis(true)} onMouseLeave={() => setTaskBarVis(false)} onClick={handleOpen}>
+                <div className="notecard-content">
+                    <div className="notecard-title"><h2 ref={titleRef}>{title}</h2> { pinned ? <AiFillPushpin className="icon" onClick={handleUnpin}/> : <AiOutlinePushpin className="icon" onClick={handlePin}/> } </div>
+                    <h3>{date}</h3>
+                    <pre ref={contentRef}>{content}</pre>
+                </div>
+                <div className="taskbar-container">
+                    <div className={`notecard-taskbar ${taskBarVis ? null : "hidden"}`}>
                         <AiFillDelete className="icon" onClick={handleDelete}/>
                         <div className="colors">
                             <div className="white circle" onClick={handleWhite}></div>
@@ -227,9 +238,10 @@ const Notecard = ({ title, date, content, color, pinned, id }) => {
                             <div className="blue circle" onClick={handleBlue}></div>
                             <div className="yellow circle" onClick={handleYellow}></div>
                         </div>
-                    </div> : null }
+                    </div> 
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 
