@@ -27,7 +27,7 @@ const Notebook = () => {
         allNotes = [...notes]
     }
 
-    const dispNotes = allNotes.filter((note) => note.title.includes(query) || note.content.includes(query) || note.date.includes(query))
+    const dispNotes = allNotes.filter((note) => note.title.toLowerCase().includes(query.toLowerCase()) || note.content.toLowerCase().includes(query.toLowerCase()) || note.date.toLowerCase().includes(query.toLowerCase()))
 
     const pinnedNotes = dispNotes.filter((note) => note.pinned)
     const pinnedNotecards = pinnedNotes.map((note) => {
