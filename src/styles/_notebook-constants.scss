@@ -94,6 +94,16 @@
             border: 1px solid;
             border-radius: 10px;
             padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .notecard-title {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
 
             h2 {
                 font-size: 1.5rem;

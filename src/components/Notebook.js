@@ -37,6 +37,7 @@ const Notebook = () => {
                     date={note.date}
                     content={note.content}
                     color={note.color}
+                    pinned={note.pinned}
                     id={note._id}
               />
     })
@@ -49,6 +50,7 @@ const Notebook = () => {
                     date={note.date}
                     content={note.content}
                     color={note.color}
+                    pinned={note.pinned}
                     id={note._id}
               />
     }) 
