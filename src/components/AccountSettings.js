@@ -55,7 +55,7 @@ const AccountSettings = ({ setAcctSettingsVis }) => {
                 <button type="submit">Save Changes</button>
             </form>
             <button onClick={() => setAcctSettingsVis(false)}>Cancel</button>
-            { acctError ? <p>Account with this email already exists.</p> : null}
+            { acctError ? <p>Account with this email already exists.</p> : null }
         </div>
     )
 }

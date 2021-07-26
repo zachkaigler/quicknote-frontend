@@ -11,12 +11,12 @@ const Notecard = ({ title, date, content, color, pinned }) => {
     return (
         <div className={`notecard ${color}`} onMouseOver={() => setTaskBarVis(true)} onMouseLeave={() => setTaskBarVis(false)}>
             <div className="notecard-content">
-                <div className="notecard-title"><h2>{title}</h2> { pinned ? <AiFillPushpin onClick={handleUnpin}/> : <AiOutlinePushpin onClick={handlePin}/> } </div>
+                <div className="notecard-title"><h2>{title}</h2> { pinned ? <AiFillPushpin className="icon" onClick={handleUnpin}/> : <AiOutlinePushpin className="icon" onClick={handlePin}/> } </div>
                 <h3>{date}</h3>
                 <p>{content}</p>
             </div>
             <div className="notecard-taskbar">
-                { taskBarVis ? <AiFillDelete onClick={handleDelete}/> : null }
+                { taskBarVis ? <AiFillDelete className="icon" onClick={handleDelete}/> : null }
             </div>
         </div>
     )
