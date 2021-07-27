@@ -26,6 +26,7 @@ function App() {
                     if (data.error) {
                         console.log(data.error)
                     } else {
+                        console.log(data.result)
                         dispatch({type: "SET_USER", payload: data.result})
                         dispatch({type: "SET_NOTES", payload: data.result.notes})
                         setIsLoaded(true)

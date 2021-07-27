@@ -343,12 +343,17 @@ table {
 .notebook-dark .modal {
   width: 70vw;
   height: 70vh;
+  min-height: 25rem;
   -webkit-box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
           box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 1000;
   border-radius: 15px;
   text-align: right;
+}
+
+.notebook-dark .modal ::-webkit-scrollbar {
+  width: 10px;
 }
 
 .notebook-dark .modal form {
@@ -391,7 +396,19 @@ table {
 
 .notebook-dark .modal .modal-delete {
   margin-right: 4%;
+  margin-top: 2%;
   cursor: pointer;
+}
+
+.notebook-dark .new-note form input, .notebook-dark .new-note form textarea {
+  border: 1px solid;
+}
+
+.notebook-dark .new-note form textarea {
+  border-radius: 10px;
+  width: 100.5%;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 .notebook-dark .column-left {
@@ -537,10 +554,14 @@ table {
           justify-content: space-between;
 }
 
+.notebook-dark .main-content .notecard-content {
+  height: 50%;
+}
+
 .notebook-dark .main-content .notecard {
   text-align: left;
   width: 15rem;
-  height: 18rem;
+  height: 19rem;
   border: 1px solid;
   border-radius: 10px;
   padding: 15px;
@@ -707,6 +728,22 @@ table {
   background-color: #282828;
 }
 
+.notebook-dark .modal ::-webkit-scrollbar-track {
+  background: #282828;
+}
+
+.notebook-dark .modal ::-webkit-scrollbar-thumb {
+  background: #393939;
+}
+
+.notebook-dark .modal ::-webkit-scrollbar-thumb:hover {
+  background: #393939;
+}
+
+.notebook-dark .new-note form input, .notebook-dark .new-note form textarea {
+  border-color: #393939;
+}
+
 .notebook-dark .main-content {
   background-color: #282828;
 }
@@ -792,12 +829,17 @@ table {
 .notebook-light .modal {
   width: 70vw;
   height: 70vh;
+  min-height: 25rem;
   -webkit-box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
           box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 1000;
   border-radius: 15px;
   text-align: right;
+}
+
+.notebook-light .modal ::-webkit-scrollbar {
+  width: 10px;
 }
 
 .notebook-light .modal form {
@@ -840,7 +882,19 @@ table {
 
 .notebook-light .modal .modal-delete {
   margin-right: 4%;
+  margin-top: 2%;
   cursor: pointer;
+}
+
+.notebook-light .new-note form input, .notebook-light .new-note form textarea {
+  border: 1px solid;
+}
+
+.notebook-light .new-note form textarea {
+  border-radius: 10px;
+  width: 100.5%;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 .notebook-light .column-left {
@@ -986,10 +1040,14 @@ table {
           justify-content: space-between;
 }
 
+.notebook-light .main-content .notecard-content {
+  height: 50%;
+}
+
 .notebook-light .main-content .notecard {
   text-align: left;
   width: 15rem;
-  height: 18rem;
+  height: 19rem;
   border: 1px solid;
   border-radius: 10px;
   padding: 15px;
@@ -1160,6 +1218,22 @@ table {
   background-color: #e9e8e8;
 }
 
+.notebook-light .modal ::-webkit-scrollbar-track {
+  background: #e9e8e8;
+}
+
+.notebook-light .modal ::-webkit-scrollbar-thumb {
+  background: #e6e6e6;
+}
+
+.notebook-light .modal ::-webkit-scrollbar-thumb:hover {
+  background: #e6e6e6;
+}
+
+.notebook-light .new-note form input, .notebook-light .new-note form textarea {
+  border-color: #e6e6e6;
+}
+
 .notebook-light .main-content {
   background-color: #e9e8e8;
 }
@@ -1244,9 +1318,10 @@ p {
 
 pre {
   font-family: Arial, Helvetica, sans-serif;
-  overflow: wrap;
+  overflow: hidden;
   word-wrap: break-word;
   white-space: pre-wrap;
+  height: 13rem;
 }
 
 .loading-dark {

@@ -8,6 +8,7 @@ const NoteModal = ({ isOpen, setIsOpen, activeNote, setActiveNote }) => {
     const [title, setTitle] = useState(activeNote ? activeNote.title : "")
     const [content, setContent] = useState(activeNote ? activeNote.content : "")
     const notes = useSelector(state => state.userReducer.notes)
+    const user = useSelector(state => state.userReducer.user)
     const dispatch = useDispatch()
     
     useEffect(() => {
@@ -16,6 +17,11 @@ const NoteModal = ({ isOpen, setIsOpen, activeNote, setActiveNote }) => {
     }, [activeNote])
 
     const modalRef = useRef()
+
+    const resetModal = () => {
+        setIsOpen(false)
+        setActiveNote(null)
+    }
 
     const handleClose = (e) => {
         if (modalRef.current === e.target) {
@@ -29,7 +35,6 @@ const NoteModal = ({ isOpen, setIsOpen, activeNote, setActiveNote }) => {
                     pinned: activeNote.pinned,
                     _id: activeNote._id
                 }
-                console.log(theNote.content.split(" "))
                 if (theNote.content !== activeNote.content || theNote.title !== activeNote.title) {
                     dispatch({type: "SET_NOTES", payload: notes.map((note) => {
                         if (note._id === theNote._id) {
@@ -50,11 +55,44 @@ const NoteModal = ({ isOpen, setIsOpen, activeNote, setActiveNote }) => {
                     console.log("note unchanged")
                 }
             } else {
-                theNote = {}
+                theNote = {
+                    title: title,
+                    date: new Date().toLocaleString(),
+                    content: content,
+                    color: "white",
+                    pinned: false,
+                    user: user._id
+                }
+                fetch(`${baseUrl}/notes`, {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json",
+                        "Authorization": `Bearer: ${localStorage.qnToken}`
+                    },
+                    body: JSON.stringify(theNote)
+                })
+                .then(res => res.json())
+                .then((newNote) => dispatch({type: "SET_NOTES", payload: [newNote, ...notes]})) 
             }
-            setIsOpen(false)
-            setActiveNote(null)
+            resetModal()
         } 
+    }
+
+    const handleCancelNote = () => {
+        setTitle("")
+        setContent("")
+        resetModal()
+    }
+
+    const handleDeleteNote = () => {
+        dispatch({type: "SET_NOTES", payload: notes.filter((note) => note._id !== activeNote._id )})
+        fetch(`${baseUrl}/notes/${activeNote._id}`, {
+            method: "DELETE",
+            headers: {
+                "Authorization": `Bearer: ${localStorage.qnToken}`
+            }
+        })
+        resetModal()
     }
 
     const anim = useSpring({
@@ -68,12 +106,12 @@ const NoteModal = ({ isOpen, setIsOpen, activeNote, setActiveNote }) => {
         return(
             <div className="modal-bg" ref={modalRef} onClick={handleClose}>
                 <animated.div style={anim}>
-                    <div className="modal">
+                    <div className={`modal ${activeNote ? null : "new-note"}`}>
                         <form>
-                            <input value={title} onChange={(e) => setTitle(e.target.value)}/>
-                            <textarea value={content} onChange={(e) => setContent(e.target.value)}/>
+                            <input value={title} placeholder="Title" onChange={(e) => setTitle(e.target.value)}/>
+                            <textarea value={content} placeholder="Content" onChange={(e) => setContent(e.target.value)}/>
                         </form>
-                        <AiFillDelete className="modal-delete"/>
+                        <AiFillDelete className="modal-delete" onClick={ activeNote ? handleDeleteNote : handleCancelNote }/>
                     </div>
                 </animated.div>
             </div>

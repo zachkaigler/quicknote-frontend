@@ -16,6 +16,26 @@
         input {
             background-color: rgb(233, 232, 232);
         }
+
+        ::-webkit-scrollbar-track {
+            background: rgb(233, 232, 232);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgb(230, 230, 230);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(230, 230, 230);
+        }
+    }
+
+    .new-note {
+        form {
+            input, textarea {
+                border-color: rgb(230, 230, 230);
+            }
+        }
     }
 
     .main-content {

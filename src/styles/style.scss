@@ -36,14 +36,14 @@ h3 {
 p {
     font-family: Arial, Helvetica, sans-serif;
     overflow: wrap;
-    // white-space: pre-line
 }
 
 pre {
     font-family: Arial, Helvetica, sans-serif;
-    overflow: wrap;
+    overflow: hidden;
     word-wrap: break-word;
     white-space: pre-wrap;
+    height: 13rem;
 }
 
 .loading-dark {

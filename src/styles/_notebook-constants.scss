@@ -19,11 +19,16 @@
     .modal {
         width: 70vw;
         height: 70vh;
+        min-height: 25rem;
         box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
         position: relative;
         z-index: 1000;
         border-radius: 15px;
         text-align: right;
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
 
         form {
             display: flex;
@@ -56,7 +61,23 @@
 
         .modal-delete {
             margin-right: 4%;
+            margin-top: 2%;
             cursor: pointer;
+        }
+    }
+
+    .new-note {
+        form {
+            input, textarea {
+                border: 1px solid;
+            }
+
+            textarea {
+                border-radius: 10px;
+                width: 100.5%;
+                padding-left: 10px;
+                padding-top: 10px;
+            }
         }
     }
 
@@ -143,11 +164,15 @@
             flex-wrap: wrap;
             justify-content: space-between;
         }
+
+        .notecard-content {
+            height: 50%;
+        }
         
         .notecard {
             text-align: left;
             width: 15rem;
-            height: 18rem;
+            height: 19rem;
             border: 1px solid;
             border-radius: 10px;
             padding: 15px;

@@ -12,6 +12,26 @@
             color: rgb(205, 205, 205);
             background-color: rgb(40, 40, 40);
         }
+
+        ::-webkit-scrollbar-track {
+            background: rgb(40, 40, 40);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgb(57, 57, 57);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(57, 57, 57);
+        }
+    }
+
+    .new-note {
+        form {
+            input, textarea {
+                border-color: rgb(57, 57, 57);
+            }
+        }
     }
 
     .main-content {

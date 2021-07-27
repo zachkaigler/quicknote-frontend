@@ -2,7 +2,6 @@ import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
 import { useSpring, animated } from 'react-spring'
-import { firstNote } from "../firstnote"
 import logo from "../images/logo-large.png"
 import AccountSettings from "./AccountSettings"
 import Notecard from "./Notecard"
@@ -31,14 +30,7 @@ const Notebook = () => {
         history.push("/")
     }
 
-    let allNotes
-    if (!user.fnd) {
-        allNotes = [firstNote, ...notes]
-    } else {
-        allNotes = [...notes]
-    }
-
-    const dispNotes = allNotes.filter((note) => note.title.toLowerCase().includes(query.toLowerCase()) || note.content.toLowerCase().includes(query.toLowerCase()) || note.date.toLowerCase().includes(query.toLowerCase()))
+    const dispNotes = notes.filter((note) => note.title.toLowerCase().includes(query.toLowerCase()) || note.content.toLowerCase().includes(query.toLowerCase()) || note.date.toLowerCase().includes(query.toLowerCase()))
 
     const pinnedNotes = dispNotes.filter((note) => note.pinned)
     const pinnedNotecards = pinnedNotes.map((note) => {
@@ -80,7 +72,7 @@ const Notebook = () => {
                             <div className="top">
                                 <img src={logo} alt="quicknote" style={{ height: "200px" }}/>
                                 <h1>Hello, {user.firstName}</h1>
-                                <button id="new-note"><span>+</span> New Note</button>
+                                <button id="new-note" onClick={(e) => setIsOpen(true)}><span>+</span> New Note</button>
                             </div>
                             <div className="bottom">
                                 <button onClick={() => setAcctSettingsVis(true)}>Account Settings</button>
@@ -108,20 +100,21 @@ const Notebook = () => {
     } else {
         return (
             <div className={`notebook-${user.theme}`}>
-                <div className={`column-left ${ isOpen ? "blur" : null }`}>
+                <NoteModal isOpen={isOpen} setIsOpen={setIsOpen} activeNote={activeNote} setActiveNote={setActiveNote}/>
+                <animated.div className="column-left" style={anim}>
                     <div className="top">
                         <img src={logo} alt="quicknote" style={{ height: "200px"}}/>
                         <h1>Hello, {user.firstName}</h1>
-                        <button id="new-note"><span>+</span> New Note</button>
+                        <button id="new-note" onClick={(e) => setIsOpen(true)}><span>+</span> New Note</button>
                     </div>
                     <div className="bottom">
                         <button onClick={() => setAcctSettingsVis(true)}>Account Settings</button>
                         <button onClick={handleClick}>Log Out</button>
                     </div>
-                </div>
-                <div className={`main-content ${ isOpen ? "blur" : null }`}>
+                </animated.div>
+                <animated.div className="main-content" style={anim}>
                     <AccountSettings setAcctSettingsVis={setAcctSettingsVis}/>
-                </div>
+                </animated.div>
             </div>
         )
     }

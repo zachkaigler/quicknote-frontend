@@ -12,9 +12,14 @@ const Notecard = ({ title, date, content, color, pinned, id, note, setActiveNote
     const contentRef = useRef()
     const titleRef = useRef()
 
-    // Add fetch requests for delete action
     const handleDelete = () => {
         dispatch({type: "SET_NOTES", payload: notes.filter((note) => note._id !== id )})
+        fetch(`${baseUrl}/notes/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Authorization": `Bearer: ${localStorage.qnToken}`
+            }
+        })
     }
 
     const handlePin = () => {
