@@ -23,6 +23,12 @@ const NoteModal = ({ isOpen, setIsOpen, activeNote, setActiveNote }) => {
         setActiveNote(null)
     }
 
+    const handleCancelNote = () => {
+        setTitle("")
+        setContent("")
+        resetModal()
+    }
+
     const handleClose = (e) => {
         if (modalRef.current === e.target) {
             let theNote
@@ -54,6 +60,8 @@ const NoteModal = ({ isOpen, setIsOpen, activeNote, setActiveNote }) => {
                 } else {
                     console.log("note unchanged")
                 }
+            } else if (!activeNote && title === "" && content === "") {
+                handleCancelNote()
             } else {
                 theNote = {
                     title: title,
@@ -76,12 +84,6 @@ const NoteModal = ({ isOpen, setIsOpen, activeNote, setActiveNote }) => {
             }
             resetModal()
         } 
-    }
-
-    const handleCancelNote = () => {
-        setTitle("")
-        setContent("")
-        resetModal()
     }
 
     const handleDeleteNote = () => {
