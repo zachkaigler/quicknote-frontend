@@ -38,8 +38,8 @@ const Login = () => {
     }
 
     return (
-        <div className={ localStorage.qnTheme ? `login-${localStorage.qnTheme}` : "login-light"}>
-            <img src={logo} alt="quicknote" style={{ height: "200px"}}/>
+        <div className={ localStorage.qnTheme ? localStorage.qnTheme === undefined ? "login-dark" : `login-${localStorage.qnTheme}` : "login-dark"}>
+            <img src={logo} alt="quicknote" />
             { error ? <p>Incorrect email or password.</p> : null }
             <form onSubmit={handleSubmit}>
                 <input placeholder="Email" required type="email" value={email} onChange={(e) => setEmail(e.target.value)}/><br/>

@@ -75,6 +75,7 @@ table {
 .login-light img {
   margin-top: -4rem;
   margin-bottom: 2.5rem;
+  height: 200px;
 }
 
 .login-light input {
@@ -145,6 +146,7 @@ table {
 .login-dark img {
   margin-top: -4rem;
   margin-bottom: 2.5rem;
+  height: 200px;
 }
 
 .login-dark input {
@@ -310,7 +312,6 @@ table {
 
 .notebook-dark {
   min-height: 100vh;
-  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -468,6 +469,7 @@ table {
 .notebook-dark .column-left img {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  height: 200px;
 }
 
 .notebook-dark .column-left h1 {
@@ -499,9 +501,21 @@ table {
   min-height: 100vh;
   width: 100vw;
   min-width: 40rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
 }
 
-.notebook-dark .main-content .pinned {
+.notebook-dark .main-content .pinned, .notebook-dark .main-content .unpinned {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -515,27 +529,16 @@ table {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding-left: 3.2rem;
-  padding-right: 3.2rem;
   margin-bottom: 2rem;
 }
 
+.notebook-dark .main-content .search {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
 .notebook-dark .main-content .unpinned {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  padding-left: 3.2rem;
-  padding-right: 3.2rem;
   margin-bottom: 3rem;
 }
 
@@ -549,9 +552,6 @@ table {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .notebook-dark .main-content .notecard-content {
@@ -593,6 +593,12 @@ table {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  overflow: hidden;
+  max-height: 4.61rem;
+}
+
+.notebook-dark .main-content .notecard .notecard-title span {
+  max-width: 14rem;
 }
 
 .notebook-dark .main-content .notecard h2 {
@@ -657,7 +663,6 @@ table {
 }
 
 .notebook-dark .main-content .acct-settings h1 {
-  margin-top: 4rem;
   margin-bottom: 2rem;
 }
 
@@ -688,6 +693,22 @@ table {
 .notebook-dark .main-content h3 {
   color: grey;
   margin-bottom: 1.2rem;
+}
+
+.notebook-dark .act {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .notebook-dark input {
@@ -796,7 +817,6 @@ table {
 
 .notebook-light {
   min-height: 100vh;
-  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -954,6 +974,7 @@ table {
 .notebook-light .column-left img {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  height: 200px;
 }
 
 .notebook-light .column-left h1 {
@@ -985,9 +1006,21 @@ table {
   min-height: 100vh;
   width: 100vw;
   min-width: 40rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
 }
 
-.notebook-light .main-content .pinned {
+.notebook-light .main-content .pinned, .notebook-light .main-content .unpinned {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1001,27 +1034,16 @@ table {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding-left: 3.2rem;
-  padding-right: 3.2rem;
   margin-bottom: 2rem;
 }
 
+.notebook-light .main-content .search {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
 .notebook-light .main-content .unpinned {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  padding-left: 3.2rem;
-  padding-right: 3.2rem;
   margin-bottom: 3rem;
 }
 
@@ -1035,9 +1057,6 @@ table {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .notebook-light .main-content .notecard-content {
@@ -1079,6 +1098,12 @@ table {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  overflow: hidden;
+  max-height: 4.61rem;
+}
+
+.notebook-light .main-content .notecard .notecard-title span {
+  max-width: 14rem;
 }
 
 .notebook-light .main-content .notecard h2 {
@@ -1143,7 +1168,6 @@ table {
 }
 
 .notebook-light .main-content .acct-settings h1 {
-  margin-top: 4rem;
   margin-bottom: 2rem;
 }
 
@@ -1174,6 +1198,22 @@ table {
 .notebook-light .main-content h3 {
   color: grey;
   margin-bottom: 1.2rem;
+}
+
+.notebook-light .act {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .notebook-light input {
@@ -1317,7 +1357,18 @@ pre {
   overflow: hidden;
   word-wrap: break-word;
   white-space: pre-wrap;
+}
+
+.one-line {
   height: 13rem;
+}
+
+.two-line {
+  height: 12rem;
+}
+
+.three-line {
+  height: 11rem;
 }
 
 .loading-dark {

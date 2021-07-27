@@ -30,7 +30,7 @@ const Notebook = () => {
         history.push("/")
     }
 
-    const dispNotes = notes.filter((note) => note.title.toLowerCase().includes(query.toLowerCase()) || note.content.toLowerCase().includes(query.toLowerCase()) || note.date.toLowerCase().includes(query.toLowerCase()))
+    const dispNotes = notes.filter((note) => note.title.toLowerCase().includes(query.toLowerCase()) || note.content.toLowerCase().includes(query.toLowerCase()) || note.date.toLowerCase().includes(query.toLowerCase()) || note.color.toLowerCase().includes(query.toLowerCase()))
 
     const pinnedNotes = dispNotes.filter((note) => note.pinned)
     const pinnedNotecards = pinnedNotes.map((note) => {
@@ -70,7 +70,7 @@ const Notebook = () => {
                     <NoteModal isOpen={isOpen} setIsOpen={setIsOpen} activeNote={activeNote} setActiveNote={setActiveNote}/>
                     <animated.div className="column-left" style={anim}>
                             <div className="top">
-                                <img src={logo} alt="quicknote" style={{ height: "200px" }}/>
+                                <img src={logo} alt="quicknote"/>
                                 <h1>Hello, {user.firstName}</h1>
                                 <button id="new-note" onClick={(e) => setIsOpen(true)}><span>+</span> New Note</button>
                             </div>
@@ -81,7 +81,7 @@ const Notebook = () => {
                     </animated.div>
                     <animated.div className="main-content" style={anim}>
                         <div className="main-content-top">
-                            <input placeholder="Search notes..." value={query} onChange={(e) => setQuery(e.target.value)}/>
+                            <input className="search" placeholder="Search notes..." value={query} onChange={(e) => setQuery(e.target.value)}/>
                         </div>
                         <div className="pinned">
                             <h3 id="pinned">Pinned</h3>
@@ -103,7 +103,7 @@ const Notebook = () => {
                 <NoteModal isOpen={isOpen} setIsOpen={setIsOpen} activeNote={activeNote} setActiveNote={setActiveNote}/>
                 <animated.div className="column-left" style={anim}>
                     <div className="top">
-                        <img src={logo} alt="quicknote" style={{ height: "200px"}}/>
+                        <img src={logo} alt="quicknote"/>
                         <h1>Hello, {user.firstName}</h1>
                         <button id="new-note" onClick={(e) => setIsOpen(true)}><span>+</span> New Note</button>
                     </div>
@@ -112,7 +112,7 @@ const Notebook = () => {
                         <button onClick={handleClick}>Log Out</button>
                     </div>
                 </animated.div>
-                <animated.div className="main-content" style={anim}>
+                <animated.div className="main-content act" style={anim}>
                     <AccountSettings setAcctSettingsVis={setAcctSettingsVis}/>
                 </animated.div>
             </div>

@@ -225,28 +225,61 @@ const Notecard = ({ title, date, content, color, pinned, id, note, setActiveNote
         }
     }
 
+    const titleCharCount = () => title.split("").length
+
+    const handlePreClass = () => {
+        if (titleCharCount() <= 20) {
+            return "one-line"
+        } else if (titleCharCount() > 20 && titleCharCount() <= 34) {
+            return "two-line"
+        } else {
+            return "three-line"
+        }
+    }
+
+    const checkTitle = () => {
+        if (titleCharCount() > 56) {
+            const arr = title.split("")
+            let counter = 0
+            return arr.map((letter) => {
+                if (counter < 56) {
+                    counter += 1
+                    return letter
+                } else if (counter === 56) {
+                    counter +=1
+                    return `${letter}...`
+                } else {
+                    counter +=1
+                    return null
+                }
+            }).join("")
+        } else {
+            return title
+        }
+    }
+
     return (
-        <>
-            <div className={`notecard ${color}`} ref={modalRef} onMouseOver={() => setTaskBarVis(true)} onMouseLeave={() => setTaskBarVis(false)} onClick={handleOpen}>
-                <div className="notecard-content">
-                    <div className="notecard-title"><h2 ref={titleRef}>{title}</h2> { pinned ? <AiFillPushpin className="icon" onClick={handleUnpin}/> : <AiOutlinePushpin className="icon" onClick={handlePin}/> } </div>
+        <div className={`notecard ${color}`} ref={modalRef} onMouseOver={() => setTaskBarVis(true)} onMouseLeave={() => setTaskBarVis(false)} onClick={handleOpen}>
+            <div className="notecard-content">
+                <div className="title-date-container">
+                    <div className="notecard-title"><span><h2 ref={titleRef}>{checkTitle()}</h2></span> { pinned ? <AiFillPushpin className="icon" onClick={handleUnpin}/> : <AiOutlinePushpin className="icon" onClick={handlePin}/> } </div>
                     <h3>{date}</h3>
-                    <pre ref={contentRef}>{content}</pre>
                 </div>
-                <div className="taskbar-container">
-                    <div className={`notecard-taskbar ${taskBarVis ? null : "hidden"}`}>
-                        <AiFillDelete className="icon" onClick={handleDelete}/>
-                        <div className="colors">
-                            <div className="white circle" onClick={handleWhite}></div>
-                            <div className="red circle" onClick={handleRed}></div>
-                            <div className="green circle" onClick={handleGreen}></div>
-                            <div className="blue circle" onClick={handleBlue}></div>
-                            <div className="yellow circle" onClick={handleYellow}></div>
-                        </div>
-                    </div> 
-                </div>
+                <pre className={handlePreClass()} ref={contentRef}>{content}</pre>
             </div>
-        </>
+            <div className="taskbar-container">
+                <div className={`notecard-taskbar ${taskBarVis ? null : "hidden"}`}>
+                    <AiFillDelete className="icon" onClick={handleDelete}/>
+                    <div className="colors">
+                        <div className="white circle" onClick={handleWhite}></div>
+                        <div className="red circle" onClick={handleRed}></div>
+                        <div className="green circle" onClick={handleGreen}></div>
+                        <div className="blue circle" onClick={handleBlue}></div>
+                        <div className="yellow circle" onClick={handleYellow}></div>
+                    </div>
+                </div> 
+            </div>
+        </div>
     )
 }
 

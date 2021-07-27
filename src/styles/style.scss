@@ -6,10 +6,6 @@
 @import './notebook-dark';
 @import './notebook-light';
 
-// .App {
-//     overflow-x: hidden;
-// }
-
 input:focus,
 select:focus,
 textarea:focus,
@@ -43,7 +39,18 @@ pre {
     overflow: hidden;
     word-wrap: break-word;
     white-space: pre-wrap;
+}
+
+.one-line {
     height: 13rem;
+}
+
+.two-line {
+    height: 12rem;
+}
+
+.three-line {
+    height: 11rem;
 }
 
 .loading-dark {
