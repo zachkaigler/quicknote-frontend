@@ -82,6 +82,8 @@ const NoteModal = ({ isOpen, setIsOpen, activeNote, setActiveNote }) => {
                 .then(res => res.json())
                 .then((newNote) => dispatch({type: "SET_NOTES", payload: [newNote, ...notes]})) 
             }
+            setTitle("")
+            setContent("")
             resetModal()
         } 
     }
