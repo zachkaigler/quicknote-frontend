@@ -94,6 +94,8 @@ const NoteModal = ({ isOpen, setIsOpen, activeNote, setActiveNote }) => {
                 "Authorization": `Bearer: ${localStorage.qnToken}`
             }
         })
+        setTitle("")
+        setContent("")
         resetModal()
     }
 
