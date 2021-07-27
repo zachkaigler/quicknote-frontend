@@ -48,7 +48,7 @@ const Signup = () => {
     }
 
     return (
-        <div className={ localStorage.qnTheme ? `signup-${localStorage.qnTheme}` : "signup-light"}>
+        <div className={ localStorage.qnTheme ? localStorage.qnTheme === undefined ? "signup-dark" : `signup-${localStorage.qnTheme}` : "signup-dark" }>
             <form onSubmit={handleSubmit}>
                 <input required type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/><br/>
                 <input required type="password" placeholder="Password" value={pass1} onChange={(e) => setPass1(e.target.value)}/><br/>

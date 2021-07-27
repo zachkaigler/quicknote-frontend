@@ -38,7 +38,7 @@ const Login = () => {
     }
 
     return (
-        <div className={ localStorage.qnTheme ? localStorage.qnTheme === undefined ? "login-dark" : `login-${localStorage.qnTheme}` : "login-dark"}>
+        <div className={ localStorage.qnTheme ? localStorage.qnTheme === undefined ? "login-dark" : `login-${localStorage.qnTheme}` : "login-dark" }>
             <img src={logo} alt="quicknote" />
             { error ? <p>Incorrect email or password.</p> : null }
             <form onSubmit={handleSubmit}>
