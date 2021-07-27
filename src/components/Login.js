@@ -29,7 +29,7 @@ const Login = () => {
                 setError(true)
             } else {
                 localStorage.qnToken = data.token
-                localStorage.qnTheme = data.theme
+                localStorage.qnTheme = data.result.theme
                 dispatch({type: "SET_USER", payload: data.result})
                 dispatch({type: "SET_NOTES", payload: data.result.notes})
                 history.push("/notes")
