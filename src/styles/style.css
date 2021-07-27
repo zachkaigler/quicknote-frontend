@@ -1284,10 +1284,6 @@ table {
   background-color: #d7d7d7;
 }
 
-.App {
-  overflow-x: hidden;
-}
-
 input:focus,
 select:focus,
 textarea:focus,
