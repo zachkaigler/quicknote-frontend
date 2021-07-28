@@ -1,11 +1,10 @@
 import { useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { useHistory } from "react-router-dom"
+import { useSelector } from "react-redux"
 import { useSpring, animated } from 'react-spring'
-import logo from "../images/logo-large.png"
 import AccountSettings from "./AccountSettings"
 import Notecard from "./Notecard"
 import NoteModal from "./NoteModal"
+import Sidebar from "./Sidebar"
 
 const Notebook = () => {
     const [acctSettingsVis, setAcctSettingsVis] = useState(false)
@@ -14,8 +13,6 @@ const Notebook = () => {
     const [activeNote, setActiveNote] = useState(null)
     const user = useSelector(state => state.userReducer.user)
     const notes = useSelector(state => state.userReducer.notes)
-    const dispatch = useDispatch()
-    const history = useHistory()
 
     const anim = useSpring({
         config: {
@@ -23,12 +20,6 @@ const Notebook = () => {
         },
         filter: isOpen ? `blur(5px)` : `blur(0px)`,
     })
-
-    const handleClick = () => {
-        localStorage.removeItem("qnToken")
-        dispatch({type: "SET_USER", payload: null})
-        history.push("/")
-    }
 
     const dispNotes = notes.filter((note) => note.title.toLowerCase().includes(query.toLowerCase()) || note.content.toLowerCase().includes(query.toLowerCase()) || note.date.toLowerCase().includes(query.toLowerCase()) || note.color.toLowerCase().includes(query.toLowerCase()))
 
@@ -68,17 +59,7 @@ const Notebook = () => {
         return (
                 <div className={`notebook-${user.theme}`}>
                     <NoteModal isOpen={isOpen} setIsOpen={setIsOpen} activeNote={activeNote} setActiveNote={setActiveNote}/>
-                    <animated.div className="column-left" style={anim}>
-                            <div className="top">
-                                <img src={logo} alt="quicknote"/>
-                                <h1>Hello, {user.firstName}</h1>
-                                <button id="new-note" onClick={(e) => setIsOpen(true)}><span>+</span> New Note</button>
-                            </div>
-                            <div className="bottom">
-                                <button onClick={() => setAcctSettingsVis(true)}>Account Settings</button>
-                                <button onClick={handleClick}>Log Out</button>
-                            </div>
-                    </animated.div>
+                    <Sidebar setIsOpen={setIsOpen} isOpen={isOpen} setAcctSettingsVis={setAcctSettingsVis}/>
                     <animated.div className="main-content" style={anim}>
                         <div className="main-content-top">
                             <input className="search" placeholder="Search notes..." value={query} onChange={(e) => setQuery(e.target.value)}/>
@@ -101,17 +82,7 @@ const Notebook = () => {
         return (
             <div className={`notebook-${user.theme}`}>
                 <NoteModal isOpen={isOpen} setIsOpen={setIsOpen} activeNote={activeNote} setActiveNote={setActiveNote}/>
-                <animated.div className="column-left" style={anim}>
-                    <div className="top">
-                        <img src={logo} alt="quicknote"/>
-                        <h1>Hello, {user.firstName}</h1>
-                        <button id="new-note" onClick={(e) => setIsOpen(true)}><span>+</span> New Note</button>
-                    </div>
-                    <div className="bottom">
-                        <button onClick={() => setAcctSettingsVis(true)}>Account Settings</button>
-                        <button onClick={handleClick}>Log Out</button>
-                    </div>
-                </animated.div>
+                <Sidebar setIsOpen={setIsOpen} isOpen={isOpen} setAcctSettingsVis={setAcctSettingsVis}/>
                 <animated.div className="main-content act" style={anim}>
                     <AccountSettings setAcctSettingsVis={setAcctSettingsVis}/>
                 </animated.div>

@@ -1,6 +1,5 @@
 @mixin notebook-constants {
     min-height: 100vh;
-    // width: 100vw;
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -131,6 +130,11 @@
                 font-size: 2rem;
                 margin-right: .5rem;
             }
+        }
+
+        a .github {
+            margin: .5rem;
+            height: 50px;
         }
     }
 

@@ -497,6 +497,11 @@ table {
   margin-right: .5rem;
 }
 
+.notebook-dark .column-left a .github {
+  margin: .5rem;
+  height: 50px;
+}
+
 .notebook-dark .main-content {
   min-height: 100vh;
   width: 100vw;
@@ -1002,6 +1007,11 @@ table {
   margin-right: .5rem;
 }
 
+.notebook-light .column-left a .github {
+  margin: .5rem;
+  height: 50px;
+}
+
 .notebook-light .main-content {
   min-height: 100vh;
   width: 100vw;
@@ -1389,5 +1399,11 @@ pre {
 
 .hidden {
   opacity: 0;
+}
+
+#github {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
 }
 /*# sourceMappingURL=style.css.map */
