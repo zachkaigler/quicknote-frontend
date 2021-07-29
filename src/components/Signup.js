@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useHistory } from "react-router-dom"
 import { useDispatch } from "react-redux"
+import { ThreeDots } from "react-loading-icons"
 import { baseUrl } from "../baseurl"
 
 const Signup = () => {
@@ -11,11 +12,13 @@ const Signup = () => {
     const [lastName, setLastName] = useState("")
     const [passError, setPassError] = useState(false)
     const [acctError, setAcctError] = useState(false)
+    const [wasClicked, setWasClicked] = useState(false)
     const history = useHistory()
     const dispatch = useDispatch()
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setWasClicked(true)
         setPassError(false)
         setAcctError(false)
         if (pass1 !== pass2) {
@@ -55,7 +58,7 @@ const Signup = () => {
                 <input required type="password" placeholder="Confirm Password" value={pass2} onChange={(e) => setPass2(e.target.value)}/><br/>
                 <input required type="text" placeholder="First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)}/><br/>
                 <input required type="text" placeholder="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)}/><br/>
-                <button type="submit">Sign Up</button>
+                <button type="submit">{ wasClicked ? <ThreeDots fill="#808080" height=".5rem" style={{ marginLeft: "-1.2rem" }}/> : "Sign Up"}</button>
             </form>
             <button onClick={() => history.push("/")}>Back</button>
             { passError ? <p>Passwords must match.</p> : null}

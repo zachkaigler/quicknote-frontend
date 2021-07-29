@@ -1,4 +1,4 @@
-import { Switch, Route, Redirect } from "react-router-dom"
+import { Switch, Route, Redirect, useHistory } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useState } from "react"
 import { baseUrl } from "../baseurl"
@@ -11,6 +11,7 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false)
   const user = useSelector(state => state.userReducer.user)
   const dispatch = useDispatch()
+  const history = useHistory()
 
   useEffect(() => {
     if (!user) {
@@ -25,6 +26,8 @@ function App() {
             .then(data => {
                     if (data.error) {
                         console.log(data.error)
+                        localStorage.clear()
+                        history.push("/")
                     } else {
                         dispatch({type: "SET_USER", payload: data.result})
                         dispatch({type: "SET_NOTES", payload: data.result.notes})
@@ -39,9 +42,9 @@ function App() {
     } else {
       setIsLoaded(true)
     }
-  }, [user, dispatch])
+  }, [user, dispatch, history])
 
-  if (!isLoaded) return null
+  if (!isLoaded) return <Loading />
 
   return (
     <div className="App">

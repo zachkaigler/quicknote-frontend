@@ -54,12 +54,18 @@ pre {
 }
 
 .loading-dark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 100vh;
     background-color: rgb(48, 48, 48);
 }
 
 .loading-light {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 100vh;
     background-color: rgb(245, 245, 245);

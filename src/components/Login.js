@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { useHistory } from "react-router-dom"
+import { ThreeDots } from "react-loading-icons"
 import { baseUrl } from "../baseurl"
 import logo from "../images/logo-large.png"
 
@@ -8,11 +9,13 @@ const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState(false)
+    const [wasClicked, setWasClicked] = useState(false)
     const dispatch = useDispatch()
     const history = useHistory()
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setWasClicked(true)
         fetch(`${baseUrl}/users/signin`, {
             method: "POST",
             headers: {
@@ -44,7 +47,7 @@ const Login = () => {
             <form onSubmit={handleSubmit}>
                 <input placeholder="Email" required type="email" value={email} onChange={(e) => setEmail(e.target.value)}/><br/>
                 <input placeholder="Password" required type="password" value={password} onChange={(e) => setPassword(e.target.value)}/><br/>
-                <button type="submit" id="login">Log In</button>
+                <button type="submit" id="login">{ wasClicked ? <ThreeDots fill="#ac6767" height=".5rem" /> : "Log In"}</button>
             </form>
             <button id="signup" onClick={() => history.push("/signup")}>Sign Up</button>
         </div>
