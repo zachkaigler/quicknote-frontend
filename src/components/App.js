@@ -11,7 +11,6 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false)
   const user = useSelector(state => state.userReducer.user)
   const dispatch = useDispatch()
-  const history = useHistory()
 
   useEffect(() => {
     if (!user) {
@@ -28,6 +27,7 @@ function App() {
                         console.log(data.error)
                         localStorage.clear()
                         setIsLoaded(true)
+                        return <Redirect to="/"/>
                     } else {
                         dispatch({type: "SET_USER", payload: data.result})
                         dispatch({type: "SET_NOTES", payload: data.result.notes})
@@ -42,7 +42,7 @@ function App() {
     } else {
       setIsLoaded(true)
     }
-  }, [user, dispatch, history])
+  }, [user, dispatch])
 
   if (!isLoaded) return <Loading />
 
