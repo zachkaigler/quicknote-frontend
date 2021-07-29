@@ -29,6 +29,7 @@ const Login = () => {
         .then(resp => resp.json())
         .then((data) => {
             if (data.error) {
+                setWasClicked(false)
                 setError(true)
             } else {
                 localStorage.qnToken = data.token

@@ -39,6 +39,7 @@ const Signup = () => {
             .then(resp => resp.json())
             .then((data) => {
                 if (data.error) {
+                    setWasClicked(false)
                     setAcctError(true)
                 } else {
                     localStorage.qnToken = data.token
