@@ -27,7 +27,7 @@ function App() {
                     if (data.error) {
                         console.log(data.error)
                         localStorage.clear()
-                        history.push("/")
+                        setIsLoaded(true)
                     } else {
                         dispatch({type: "SET_USER", payload: data.result})
                         dispatch({type: "SET_NOTES", payload: data.result.notes})
