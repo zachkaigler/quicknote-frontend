@@ -12,8 +12,8 @@ function App() {
   const user = useSelector(state => state.userReducer.user)
   const dispatch = useDispatch()
   
-  const domain = window.location.hostname.split(".")
-  console.log(domain[domain.length - 1])
+  const domain = window.location.hostname.split(".")[domain.length - 1]
+  console.log(domain)
 
   useEffect(() => {
     if (!user) {
