@@ -12,6 +12,8 @@ function App() {
   const user = useSelector(state => state.userReducer.user)
   const dispatch = useDispatch()
 
+  console.log(window.location.hostname)
+
   useEffect(() => {
     if (!user) {
         if (localStorage.qnToken) {
